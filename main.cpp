@@ -3,6 +3,7 @@
 using namespace std;
 
 string doubleDollars(string n) {
+  cout<<endl<<n.length();
   return ""; //
 }
 
