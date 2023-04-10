@@ -17,5 +17,6 @@ int main() {
   cout<< endl<< getDigitCount(12235, 7);
   cout<< endl<< getDigitCount(12235, 2);
   cout<< endl<< getDigitCount(0, 2);
+  cout<< endl<< getDigitCount(0, 0);
   return 0;
 }
