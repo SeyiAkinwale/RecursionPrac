@@ -4,6 +4,7 @@ using namespace std;
 
 string doubleDollars(string n) {
   cout<<endl<<n.length();
+  cout<<endl<<n.substr(0,n.length()-2);
   return ""; //
 }
 
