@@ -2,9 +2,11 @@
 #include <string>
 using namespace std;
 
-string doubleDollars(string n) {
-  //cout<<endl<<n.length();
-  //cout<<endl<<n.substr(0,n.length()-2);
+string doubleDollars(string n) 
+{
+  cout<<endl<<n.length();
+  cout<<endl<<n.substr(0,n.length());
+  cout<<" "<<n[n.length()-1];
   //cout<<n[n.length()-1];
   if(n.length()==1) return "";
   else if (n[n.length()-2]==n[n.length()-1])
@@ -20,7 +22,10 @@ string doubleDollars(string n) {
   //return ""; //
 }
 
+string tester(string n){n.substr(0,n.length()); n.substr(0,n.length()-1);}
+
 int main() {
   cout << endl << doubleDollars("goodbye");
+  cout << endl << tester("hello");
   return 0;
 }
