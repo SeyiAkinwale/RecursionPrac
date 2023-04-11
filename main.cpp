@@ -11,11 +11,11 @@ string doubleDollars(string n)
   if(n.length()==1) return "";
   else if (n[n.length()-2]==n[n.length()-1])
   {
-    return doubleDollars(n.substr(0,n.length()-2))+n[n.length()-1];
+    return doubleDollars(n.substr(0,n.length()))+n[n.length()-1];
     cout<<"hi";
   }else if (n[n.length()-2]!=n[n.length()-1])
   {
-    return doubleDollars(n.substr(0,n.length()-2))+n[n.length()-1];
+    return doubleDollars(n.substr(0,n.length()))+n[n.length()-1];
     cout<<"hi";
   }
   //if (n[n.length()-1]==n[n.length()]) cout<<"\n$";
