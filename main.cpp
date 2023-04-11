@@ -22,10 +22,9 @@ string doubleDollars(string n)
   //return ""; //
 }
 
-string tester(string n){n.substr(0,n.length()); n.substr(0,n.length()-1);}
+string tester(string n){return n.substr(0,n.length());}
 
 int main() {
   cout << endl << doubleDollars("goodbye");
-  cout << endl << tester("hello");
   return 0;
 }
