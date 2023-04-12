@@ -4,26 +4,22 @@ using namespace std;
 
 string findAngles(string str) 
 {
-  if(str[str.length()-1]=='<')
-    return "<";
-  else if(str.length()==1 && str[0]!='<')
-    return "";
-  //else if (str.length()!=1 && str[str.length()-1]=='<')
-  //  return "<";
+  if(str[0]=='<' && str[str.length()-1]=='>')
+    return str;
+  else if (str[0]=='<')
+    return findAngles(str.substr(0,str.length()-1));
   else if (str[str.length()-1]=='>')
-    return findAngles(str.substr(0,str.length()-1))+">";
-  //else if ()
-   // return "";
-  else 
-    return findAngles(str.substr(0,str.length()-1))+str[str.length()-1];
+    return findAngles(str.substr(1,str.length()-1));
+  else
+      return findAngles(str.substr(1,str.length()-2));
 }
 
 
 int main() {
-  cout << endl << findAngles("a<aaafg>");
+  cout << endl << findAngles("a<aaafg>a");
   cout << endl << findAngles("abs<bnm>789");
-  cout << endl << findAngles("4agh<y>");
-  cout << endl << findAngles("<a>bbbbbb");
+  //cout << endl << findAngles("4agh<y>");
+  //cout << endl << findAngles("<a>bbbbbb");
 
   return 0;
 }
