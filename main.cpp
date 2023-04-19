@@ -1,21 +1,26 @@
 #include <iostream>
 using namespace std;
 
-canEqualTarget(const int a[], int size, int target)
+bool canEqualTarget(const int a[], int size, int target)
 {
-  //base case: both left and right elem are brackets
-  if(str[0]=='<' && str[str.length()-1]=='>') return str;
-  
-  //recursive case 1: only the left elem is bracket
-  //so, remove last element
-  else if (str[0]=='<')
-    return findAngles(str.substr(0,str.length()-1));
-
+  if (size==0 && target==0)
+    return true;
+  else if (size==0 && target !=0)
+    return false;
+  else if (canEqualTarget(a,size-1,target))
+    return true;
+  else if (canEqualTarget(a,size-1,target)==false)
+    return canEqualTarget(a,size-1,target-a[size-1]);
 }
 
 int main() {
-  cout << endl << findAngles("a<aaafg>a");
-
+  int apples[]={};
+  int oranges[]={2,4,8};
+  int bananas[]={2, 4, 8, 6};
+  cout << endl << canEqualTarget(apples, 0, 0);
+  cout << endl << canEqualTarget(apples, 0, 7);
+  cout << endl << canEqualTarget(oranges, 3, 10);
+  cout << endl << canEqualTarget(bananas, 4, 11);
 
   return 0;
 }
